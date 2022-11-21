@@ -3,7 +3,7 @@
 const favoriteUser = "Mark";
 
 const sayHello = function (name) {
-  if (name === "Mark") {
+  if (name.toLowerCase() === favoriteUser.toLowerCase()) {
     return `Hi, ${name}!`;
   }
   return `Hello, ${name}!`;

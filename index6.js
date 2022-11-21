@@ -2,12 +2,14 @@
 Если в слове четное количество букв, то и последняя буква должна быть заглавной.*/
 
 const capitalizeString = function (str) {
+  const firstLetter = str[0].toUpperCase();
   if (str.length % 2 === 0) {
-    return `${str[0].toUpperCase()}${str
-      .slice(1, str.length - 1)
-      .toLowerCase()}${str[str.length - 1].toUpperCase()}`;
+    const middleStr = str.slice(1, str.length - 1).toLowerCase();
+    const lastLetter = str[str.length - 1].toUpperCase();
+    return `${firstLetter}${middleStr}${lastLetter}`;
   }
-  return `${str[0].toUpperCase()}${str.slice(1, str.length).toLowerCase()}`;
+  const otherStr = str.slice(1, str.length).toLowerCase();
+  return `${firstLetter}${otherStr}`;
 };
 
 console.log("Task 6");
