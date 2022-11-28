@@ -60,9 +60,9 @@ console.log(
 // Вариант 4: 	filter
 
 const filterArrayValuesWithfilter = (arrayValues) => {
-  return (convertArray = arrayValues.filter((value) => {
-    return typeof value === "string" && value.length % 2 === 0;
-  }));
+  return (convertArray = arrayValues.filter(
+    (value) => typeof value === "string" && value.length % 2 === 0
+  ));
 };
 
 console.log(

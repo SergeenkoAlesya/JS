@@ -8,21 +8,11 @@ const blockList = ["a", "p"];
 
 // Вариант 1: -	For (let I = 0; …; …) {}
 
-const checkFirstLetterWithFor = (firstLetter, letters) => {
-  for (let i = 0; i < letters.length; i++) {
-    const ignoreLetter = letters[i].toLowerCase();
-    if (firstLetter === ignoreLetter) {
-      return false;
-    }
-  }
-  return true;
-};
-
 const filterArrayWithFor = (users, letters) => {
   const newArray = [];
   for (let i = 0; i < users.length; i++) {
     const firstLetter = users[i][0].toLowerCase();
-    if (checkFirstLetterWithFor(firstLetter, letters)) {
+    if (!letters.includes(firstLetter)) {
       newArray.push(users[i]);
     }
   }

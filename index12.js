@@ -49,9 +49,9 @@ console.log("№3.3 (For of): ", convertNumbersWithForOf([3, 4, 6]));
 // Вариант 4: 	map
 
 const convertNumbersWithMap = (arrayNumbers) => {
-  return (convertArray = arrayNumbers.map((number, i) => {
-    return `Value: ${number}; Index: ${i}; Squared: ${number ** 2}`;
-  }));
+  return (convertArray = arrayNumbers.map(
+    (number, i) => `Value: ${number}; Index: ${i}; Squared: ${number ** 2}`
+  ));
 };
 
 console.log("№3.4 (map): ", convertNumbersWithMap([3, 4, 6]));
