@@ -34,12 +34,12 @@ console.log("№3.2 (While): ", convertNumbersWithWhile([3, 4, 6]));
 
 const convertNumbersWithForOf = (arrayNumbers) => {
   const convertArray = [];
+  let index = 0;
   for (const number of arrayNumbers) {
     convertArray.push(
-      `Value: ${number}; Index: ${arrayNumbers.indexOf(number)}; Squared: ${
-        number ** 2
-      }`
+      `Value: ${number}; Index: ${index}; Squared: ${number ** 2}`
     );
+    index++;
   }
   return convertArray;
 };
