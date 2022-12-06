@@ -32,15 +32,13 @@ const usersArray = [
 
 const createGenderObject = (usersArray) => {
   return usersArray.reduce(
-    (newObject, user) => {
-      const keyObject = user.gender === "Female" ? "woman" : "man";
+    (newObject, { first_name, last_name, ...otherList }) => {
+      const keyObject = otherList.gender === "Female" ? "woman" : "man";
 
-      newObject[keyObject] = newObject[keyObject].concat([
+      newObject[keyObject].push([
         {
-          id: user.id,
-          fullName: `${user.first_name} ${user.last_name}`,
-          email: user.email,
-          ipAddress: user.ip_address,
+          fullName: `${first_name} ${last_name}`,
+          ...otherList,
         },
       ]);
 
