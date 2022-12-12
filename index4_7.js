@@ -6,12 +6,20 @@ const numbers = [1,2,3]
 	const result2 = numbers.myMap((number) => String(number)) // [‘1’, ‘2’, ‘3’]
 */
 
-Array.prototype.myMap = function (cb) {
-  let result = [];
+/*Array.prototype.myMap = function (cb) {
+  const result = [];
   for (let item of this) {
-    result.push(cb(item));
+    result.push(cb(this[item], item, this));
   }
   return result;
+};*/
+
+Array.prototype.myMap = function (callback) {
+  const resultArray = [];
+  for (let index = 0; index < this.length; index++) {
+    resultArray.push(callback(this[index], index, this));
+  }
+  return resultArray;
 };
 
 const numbers = [1, 2, 3];

@@ -6,11 +6,10 @@ fn({ name: ‘alex’, age: 10, friends: [], address: null}) // { name: ‘alex�
 
 const filterNull = (data) => {
   const arrayOfData = Object.entries(data);
-  const arrayWithoutNull = arrayOfData.filter((value) => {
-    return !(value[1] === null);
-  });
-  return arrayWithoutNull.reduce((result, [key, value]) => {
-    result[key] = value;
+  return arrayOfData.reduce((result, [key, value]) => {
+    if (value !== undefined && value !== null) {
+      result[key] = value;
+    }
     return result;
   }, {});
 };

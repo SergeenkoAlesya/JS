@@ -12,7 +12,7 @@ const findMaxNumber = (numbers) => {
     return result;
   }, {});
 
-  let sortable = Object.entries(newObject);
+  const sortable = Object.entries(newObject);
   sortable.sort(function (a, b) {
     return b[1] - a[1];
   });

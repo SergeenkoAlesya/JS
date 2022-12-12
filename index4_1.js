@@ -1,6 +1,5 @@
 /* получить результат {"65432445": 'The Chamber', "675465": 'Fracture', "70111470": 'Die Hard', "654356453": 'Bad Boys'}*/
 
-
 const videos = [
   {
     id: 65432445,
@@ -22,7 +21,7 @@ const videos = [
 
 const createObjectWithValue = (videos) => {
   return videos.reduce((result, { id, title }) => {
-    result[`"${id}"`] = title;
+    result[id] = title;
     return result;
   }, {});
 };

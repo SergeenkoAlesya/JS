@@ -13,30 +13,30 @@ const boxarts = [
     url: "http://cdn-0.nflximg.com/imagin/2891/Fracture150.jpg",
   },
   {
-    width: 300,
-    height: 200,
-    url: "http://cdn-0.nflximg.com/imagin/2891/Fracture300.jpg",
-  },
-  {
     width: 425,
     height: 150,
     url: "http://cdn-0.nflximg.com/imagin/2891/Fracture425.jpg",
   },
+  {
+    width: 300,
+    height: 200,
+    url: "http://cdn-0.nflximg.com/imagin/2891/Fracture300.jpg",
+  },
 ];
 
 const findMaxSquaret = (boxarts) => {
-  const arraySquares = boxarts.map(({ width, height, ...otherList }) => {
-    return {
-      square: width * height,
-      ...otherList,
-    };
-  });
-
-  return arraySquares.reduce((result, currentElement) => {
-    return result.square >= currentElement.square
-      ? result.url
-      : currentElement.url;
-  });
+  const maxSquare = boxarts.reduce(
+    (maxSquareArray, currentElement) => {
+      const currentElementSquare = currentElement.width * currentElement.height;
+      if (currentElementSquare >= maxSquareArray.square) {
+        maxSquareArray.square = currentElementSquare;
+        maxSquareArray.url = currentElement.url;
+      }
+      return maxSquareArray;
+    },
+    { square: 0, url: "" }
+  );
+  return maxSquare.url;
 };
 
 console.log("4.2 ", findMaxSquaret(boxarts));
