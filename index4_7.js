@@ -5,11 +5,11 @@ const numbers = [1,2,3]
 	const result1 = numbers.myMap((number) => number * 2) // [2,4,6]
 	const result2 = numbers.myMap((number) => String(number)) // [‘1’, ‘2’, ‘3’]
 */
-
-/*Array.prototype.myMap = function (cb) {
+/*
+Array.prototype.myMap = function (cb) {
   const result = [];
   for (let item of this) {
-    result.push(cb(this[item], item, this));
+    result.push(cb(item));
   }
   return result;
 };*/

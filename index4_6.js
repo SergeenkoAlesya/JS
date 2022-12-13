@@ -6,7 +6,7 @@ const cutString = (str, lenghtStr) => {
   if (str.length <= lenghtStr) {
     return str;
   }
-  return str.slice(0, 3) + "...";
+  return str.slice(0, lenghtStr) + "...";
 };
 
 console.log("4.6", cutString("Hello", 3));
