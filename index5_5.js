@@ -1,9 +1,9 @@
 // найти факториал
 
 const findFactorial = (number) => {
-  if (number === 0) return 0;
+  if (number === 0) return 1;
 
-  return number > 1 ? number * findFactorial(number - 1) : number;
+  return number * findFactorial(number - 1);
 };
 
 console.log("5.5 ", findFactorial(5));
