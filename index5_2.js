@@ -5,13 +5,12 @@ findMissing([1, 3, 5, 9, 11]) // 7
 */
 
 const findMissing = (date) => {
-  const step = date[1] - date[0];
+  const step = Math.min(date[1] - date[0], date[2] - date[1]);
   let result = 0;
 
   date.forEach((currentElement, index) => {
     if (
-      index > 0 &&
-      index < date.length - 1 &&
+      typeof date[index + 1] === "number" &&
       currentElement + step !== date[index + 1]
     ) {
       result = currentElement + step;
@@ -21,3 +20,4 @@ const findMissing = (date) => {
 };
 
 console.log("5.2 ", findMissing([1, 3, 5, 9, 11]));
+console.log("5.2 ", findMissing([2, 10, 14]));

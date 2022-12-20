@@ -22,7 +22,7 @@ const findCouple = (colors) => {
     return value >= 2;
   });
 
-  countCouples = 0;
+  let countCouples = 0;
   couples.forEach(([_, value]) => {
     countCouples += Math.trunc(value / 2);
   });
