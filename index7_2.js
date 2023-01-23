@@ -25,11 +25,12 @@ const solution = async () => {
       return result;
     }, {});
 
-    for (let i = 0; i < usersInfo.length; i++) {
-      usersInfo[i].myPosts = datePosts[usersInfo[i].id];
+    for (key in usersInfo) {
+      usersInfo[key].myPosts = datePosts[usersInfo[key].id];
     }
 
     console.log(usersInfo);
+    // return usersInfo;
   } catch (error) {}
 };
 

@@ -10,10 +10,10 @@ chunk(['a', 'b', 'c', 'd'], 3);
 // => [['a', 'b', 'c'], ['d']]
 */
 
-const chunk = (date, countForSplit) => {
+const chunk = (data, countForSplit) => {
   const result = [];
-  for (let i = 0; i < date.length; i += countForSplit) {
-    result.push(date.slice(i, i + countForSplit));
+  for (let i = 0; i < data.length; i += countForSplit) {
+    result.push(data.slice(i, i + countForSplit));
   }
   return result;
 };

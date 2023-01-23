@@ -2,14 +2,12 @@
 EX: customEntries({a: 1, b:2}) // [[‘a’, 1], [‘b’, 2]]
 */
 
-customEntries = (obj) => {
+const customEntries = (obj) => {
   const resultArray = [];
-  let i = 0;
+
   for (key in obj) {
-    resultArray[i] = [];
-    resultArray[i].push(key);
-    resultArray[i].push(obj[key]);
-    i++;
+    const chunk = [key, obj[key]];
+    resultArray.push(chunk);
   }
   return resultArray;
 };
